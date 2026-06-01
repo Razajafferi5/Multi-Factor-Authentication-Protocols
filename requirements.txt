@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# MFA Authentication Server - dependencies
+# ---------------------------------------------------------------------------
+# Backend / API
+Flask==3.0.3
+Flask-Cors==4.0.1
+SQLAlchemy==2.0.36
+python-dotenv==1.0.1
+
+# Cryptography
+#   - AES-256-GCM secret vault
+#   - Argon2id password + backup-code hashing
+cryptography==43.0.3
+argon2-cffi==23.1.0
+
+# OTP provisioning helpers (QR / otpauth URI rendering only - NOT code generation)
+qrcode==7.4.2
+Pillow==10.4.0
+
+# FIDO2 / WebAuthn (real server-side attestation + assertion verification)
+webauthn==2.2.0
+
+# AI anomaly layer
+scikit-learn==1.5.2
+numpy==2.1.3
+anthropic==0.39.0
+
+# Streamlit admin dashboard
+streamlit==1.39.0
+requests==2.32.3
+pandas==2.2.3
+plotly==5.24.1
+
+# Technical-report generation (formatted .docx + embedded figures/charts)
+python-docx==1.1.2
+matplotlib==3.9.2
+
+# ---------------------------------------------------------------------------
+# Test-only dependencies
+# ---------------------------------------------------------------------------
+# pyotp is used STRICTLY as an independent reference oracle in the test suite
+# to cross-validate our hand-written RFC 4226 / RFC 6238 implementations.
+# It is NEVER imported by production code.
+pytest==8.3.3
+pyotp==2.9.0
