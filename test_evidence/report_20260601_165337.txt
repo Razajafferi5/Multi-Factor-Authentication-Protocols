@@ -1,0 +1,50 @@
+MFA Authentication Server - Test Evidence
+Captured (UTC): 2026-06-01T16:53:46.451345+00:00
+Command: C:\Users\PC\Desktop\Uni work\IS Project Raza\.venv\Scripts\python.exe -m pytest -v --tb=short
+Exit code: 0
+======================================================================
+
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-8.3.3, pluggy-1.6.0 -- C:\Users\PC\Desktop\Uni work\IS Project Raza\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\PC\Desktop\Uni work\IS Project Raza
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.13.0
+collecting ... collected 32 items
+
+tests/oracle/test_pyotp_cross_validation.py::test_hotp_agrees_with_pyotp_across_counters PASSED [  3%]
+tests/oracle/test_pyotp_cross_validation.py::test_totp_agrees_with_pyotp_across_timestamps PASSED [  6%]
+tests/oracle/test_pyotp_cross_validation.py::test_totp_agrees_with_pyotp_sha256_8_digits PASSED [  9%]
+tests/security/test_lockout.py::test_brute_force_triggers_lockout PASSED [ 12%]
+tests/security/test_replay.py::test_totp_replay_is_rejected PASSED       [ 15%]
+tests/security/test_secret_at_rest.py::test_totp_secret_encrypted_at_rest PASSED [ 18%]
+tests/security/test_webauthn_tamper.py::test_assertion_without_challenge_is_rejected PASSED [ 21%]
+tests/security/test_webauthn_tamper.py::test_tampered_assertion_does_not_authenticate PASSED [ 25%]
+tests/unit/test_anomaly.py::test_impossible_travel_feature PASSED        [ 28%]
+tests/unit/test_anomaly.py::test_new_device_feature PASSED               [ 31%]
+tests/unit/test_anomaly.py::test_failed_burst_feature PASSED             [ 34%]
+tests/unit/test_anomaly.py::test_scoring_cold_start_flags_obvious_anomaly PASSED [ 37%]
+tests/unit/test_anomaly.py::test_explainer_graceful_degradation_without_key PASSED [ 40%]
+tests/unit/test_api_flow.py::test_full_register_login_totp_flow PASSED   [ 43%]
+tests/unit/test_api_flow.py::test_wrong_password_is_unauthorized PASSED  [ 46%]
+tests/unit/test_hotp_rfc4226.py::test_hotp_matches_rfc4226_appendix_d PASSED [ 50%]
+tests/unit/test_hotp_rfc4226.py::test_dynamic_truncation_offset_logic PASSED [ 53%]
+tests/unit/test_hotp_rfc4226.py::test_hotp_verify_with_resync_window PASSED [ 56%]
+tests/unit/test_hotp_rfc4226.py::test_hotp_verify_rejects_out_of_window PASSED [ 59%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[59-expected0] PASSED [ 62%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[1111111109-expected1] PASSED [ 65%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[1111111111-expected2] PASSED [ 68%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[1234567890-expected3] PASSED [ 71%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[2000000000-expected4] PASSED [ 75%]
+tests/unit/test_totp_rfc6238.py::test_totp_matches_rfc6238_appendix_b[20000000000-expected5] PASSED [ 78%]
+tests/unit/test_totp_rfc6238.py::test_totp_verify_accepts_within_window PASSED [ 81%]
+tests/unit/test_totp_rfc6238.py::test_totp_verify_rejects_outside_window PASSED [ 84%]
+tests/unit/test_vault.py::test_roundtrip_bytes PASSED                    [ 87%]
+tests/unit/test_vault.py::test_roundtrip_str_helpers PASSED              [ 90%]
+tests/unit/test_vault.py::test_nonce_is_unique_per_encryption PASSED     [ 93%]
+tests/unit/test_vault.py::test_tampered_ciphertext_fails_authentication PASSED [ 96%]
+tests/unit/test_vault.py::test_associated_data_must_match PASSED         [100%]
+
+============================= 32 passed in 7.24s ==============================
+
