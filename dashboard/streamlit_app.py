@@ -17,6 +17,14 @@ There is intentionally NO login screen on the dashboard for this capstone demo
 from __future__ import annotations
 
 import os
+import sys
+
+# Ensure the project root is on sys.path so that ``backend.*`` is importable
+# when this file is launched from the ``dashboard/`` subdirectory (e.g. on
+# Streamlit Community Cloud where the main file is dashboard/streamlit_app.py).
+_project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 import pandas as pd
 import plotly.express as px
